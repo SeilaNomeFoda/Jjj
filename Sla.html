@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>BEM VINDO AO JzYxx</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background-color: black;
+      color: #00aaff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    h1, p, button {
+      opacity: 0;
+      transform: translateY(-50px);
+      animation: fadeInDown 1s ease-out forwards;
+    }
+
+    h1 {
+      border: 2px solid #00aaff;
+      padding: 20px 40px;
+      border-radius: 10px;
+      animation-delay: 0.2s;
+    }
+
+    p {
+      margin-top: 15px;
+      padding: 15px 25px;
+      max-width: 600px;
+      border: 1px solid #00aaff;
+      border-radius: 10px;
+      animation-delay: 0.4s;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: transparent;
+      color: #00aaff;
+      border: 2px solid #00aaff;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s, color 0.3s;
+      animation-delay: 0.6s;
+    }
+
+    button:hover {
+      background-color: #00aaff;
+      color: black;
+    }
+
+    @keyframes fadeInDown {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeOutUp {
+      to {
+        opacity: 0;
+        transform: translateY(-50px);
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1 id="titulo">BEM VINDO AO JzYxx</h1>
+  <p id="descricao">
+    O JzYxx é o melhor Hub do momento, perfeito para trolar no Brookhaven.<br>
+    Link do nosso server!: <a href="https://discord.gg/nV8q55uS" target="_blank" style="color: #00aaff; text-decoration: underline;">https://discord.gg/nV8q55uS</a>
+  </p>
+  <button id="botao" onclick="pegarScript()">pegar o script</button>
+
+  <script>
+    function pegarScript() {
+      const titulo = document.getElementById('titulo');
+      const descricao = document.getElementById('descricao');
+      const botao = document.getElementById('botao');
+
+      // Aplica animações de saída
+      titulo.style.animation = "fadeOutUp 0.6s ease-in forwards";
+      descricao.style.animation = "fadeOutUp 0.6s ease-in forwards";
+      botao.style.animation = "fadeOutUp 0.6s ease-in forwards";
+
+      setTimeout(() => {
+        alert("Script copiado com sucesso!");
+        // navigator.clipboard.writeText("Seu script aqui");
+      }, 600);
+    }
+  </script>
+</body>
+</html>
